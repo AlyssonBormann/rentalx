@@ -22,6 +22,9 @@ class User {
   isAdmin: boolean;
 
   @Column()
+  avatar: string;
+
+  @Column()
   created_at: Date;
 
   constructor() {
