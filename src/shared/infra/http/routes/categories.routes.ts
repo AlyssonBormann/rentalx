@@ -3,6 +3,8 @@ import multer from "multer";
 import { CreateCategoryController } from "@modules/cars/UseCases/createCategory/CreateCategoryController";
 import { ImportCategoryController } from "@modules/cars/UseCases/importCategory/ImportCategoryController";
 import { ListCategoriesController } from "@modules/cars/UseCases/listCategories/ListCategoriesController";
+import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
+import { ensureAdmin } from "../middlewares/ensureAdmin";
 
 const categoriesRoutes = Router();
 
@@ -14,13 +16,20 @@ const createCategoryController = new CreateCategoryController();
 const listCategoriesController = new ListCategoriesController();
 const importCategoryController = new ImportCategoryController();
 
-categoriesRoutes.post("/", createCategoryController.handler);
+categoriesRoutes.post(
+  "/",
+  ensureAuthenticated,
+  ensureAdmin,
+  createCategoryController.handler
+);
 
 categoriesRoutes.get("/", listCategoriesController.handler);
 
 categoriesRoutes.post(
   "/import",
   upload.single("file"),
+  ensureAuthenticated,
+  ensureAdmin,
   importCategoryController.handler
 );
 
