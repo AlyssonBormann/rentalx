@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 import { CreateCarUseCase } from "./CreateCarUseCase";
 
 class CreateCarController {
-  async handler(request: Request, response: Response): Promise<Response> {
+  async handle(request: Request, response: Response): Promise<Response> {
     const {
       name,
       description,
