@@ -1,4 +1,4 @@
-import { ICreateCarsDTO } from "@modules/cars/dtos/ICreateCarsDTO";
+import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { getRepository, Repository } from "typeorm";
 import { Car } from "../entities/Car";
@@ -18,7 +18,8 @@ class CarsRepository implements ICarsRepository {
     fine_amount,
     brand,
     category_id,
-  }: ICreateCarsDTO): Promise<Car> {
+    specifications,
+  }: ICreateCarDTO): Promise<Car> {
     const car = this.repository.create({
       name,
       description,
@@ -27,6 +28,7 @@ class CarsRepository implements ICarsRepository {
       fine_amount,
       brand,
       category_id,
+      specifications,
     });
 
     await this.repository.save(car);

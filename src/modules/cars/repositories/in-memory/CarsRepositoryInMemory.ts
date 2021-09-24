@@ -1,4 +1,4 @@
-import { ICreateCarsDTO } from "@modules/cars/dtos/ICreateCarsDTO";
+import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { ICarsRepository } from "../ICarsRepository";
 
@@ -13,7 +13,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
     fine_amount,
     brand,
     category_id,
-  }: ICreateCarsDTO): Promise<Car> {
+  }: ICreateCarDTO): Promise<Car> {
     const car = new Car();
 
     Object.assign(car, {

@@ -1,6 +1,5 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "@shared/errors/AppError";
-import { ICreateCarsDTO } from "@modules/cars/dtos/ICreateCarsDTO";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 
