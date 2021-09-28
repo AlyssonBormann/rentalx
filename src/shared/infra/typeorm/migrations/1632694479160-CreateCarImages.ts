@@ -27,7 +27,7 @@ export class CreateCarImages1632694479160 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "FKCarImagesCars",
+            name: "FKCarImage",
             referencedTableName: "cars",
             referencedColumnNames: ["id"],
             columnNames: ["car_id"],
@@ -40,6 +40,6 @@ export class CreateCarImages1632694479160 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("car_image");
+    await queryRunner.dropTable("cars_image");
   }
 }
