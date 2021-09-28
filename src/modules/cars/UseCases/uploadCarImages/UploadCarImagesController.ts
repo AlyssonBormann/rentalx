@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import fs from "fs";
-import { resolve } from "path";
 import { UploadCarImagesUseCase } from "./UploadCarImagesUseCase";
 
 interface IFiles {
