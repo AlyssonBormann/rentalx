@@ -22,13 +22,14 @@ export class CreateRentals1632823964963 implements MigrationInterface {
           {
             name: "start_date",
             type: "timestamp",
+            default: "now()",
           },
           {
             name: "end_date",
             type: "timestamp",
           },
           {
-            name: "expect_return_data",
+            name: "expected_return_data",
             type: "timestamp",
           },
           {
@@ -40,10 +41,35 @@ export class CreateRentals1632823964963 implements MigrationInterface {
             type: "timestamp",
             default: "now()",
           },
+          {
+            name: "updated_at",
+            type: "timestamp",
+            default: "now()",
+          },
+        ],
+        foreignKeys: [
+          {
+            name: "FKCarRental",
+            referencedTableName: "cars",
+            referencedColumnNames: ["id"],
+            columnNames: ["car_id"],
+            onDelete: "SET NULL",
+            onUpdate: "SET NULL",
+          },
+          {
+            name: "FKUserRental",
+            referencedTableName: "users",
+            referencedColumnNames: ["id"],
+            columnNames: ["user_id"],
+            onDelete: "SET NULL",
+            onUpdate: "SET NULL",
+          },
         ],
       })
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable("rentals");
+  }
 }
