@@ -25,12 +25,12 @@ class RentalsRepository implements IRentalsRepository {
     return rental;
   }
 
-  findOpenRentalByCar(car_id: string): Promise<Rental> {
-    throw new Error("Method not implemented.");
+  async findOpenRentalByCar(car_id: string): Promise<Rental> {
+    return await this.repository.findOne({ car_id });
   }
 
-  findOpenRentalByUser(user_id: string): Promise<Rental> {
-    throw new Error("Method not implemented.");
+  async findOpenRentalByUser(user_id: string): Promise<Rental> {
+    return await this.repository.findOne({ user_id });
   }
 }
 
