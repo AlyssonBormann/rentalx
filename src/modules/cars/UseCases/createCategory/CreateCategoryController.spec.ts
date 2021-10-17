@@ -41,7 +41,7 @@ describe("Create Category Controller", () => {
         name: "Category supertest",
         description: "Category description SuperTest",
       })
-      .set({ Authorization: `Bearer ${token.token}` });
+      .set({ Authorization: `Bearer ${token.refresh_token}` });
 
     expect(response.status).toBe(201);
   });
@@ -60,7 +60,7 @@ describe("Create Category Controller", () => {
         name: "Category supertest",
         description: "Category description SuperTest",
       })
-      .set({ Authorization: `Bearer ${token.token}` });
+      .set({ Authorization: `Bearer ${token.refresh_token}` });
 
     expect(response.status).toBe(400);
   });
