@@ -29,9 +29,7 @@
       "error",
       {
         "selector": "interface",
-        "format": [
-          "PascalCase"
-        ],
+        "format": ["PascalCase"],
         "custom": {
           "regex": "^I[A-Z]",
           "match": true
@@ -56,15 +54,7 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": [
-          "module",
-          "/^@shared/",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
-        ],
+        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
         "alphabetize": {
           "order": "asc",
           "ignoreCase": true
@@ -74,9 +64,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [
-          "**/*.spec.js"
-        ]
+        "devDependencies": ["**/*.spec.js"]
       }
     ],
     "prettier/prettier": "error"
