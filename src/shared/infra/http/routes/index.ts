@@ -2,7 +2,7 @@ import { Router } from "express";
 import { authenticateRoutes } from "./authenticate.routes";
 import { categoriesRoutes } from "./categories.routes";
 import { specificationsRoutes } from "./specifications.routes";
-import { usersRoutes } from "./user.routes";
+import { usersRoutes } from "./users.routes";
 import { carRoutes } from "./car.routes";
 import { rentalRoutes } from "./rental.routes";
 import { passwordRoutes } from "./password.routes";
