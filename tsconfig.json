@@ -17,6 +17,7 @@
       "@errors/*": ["errors/*"],
       "@utils/*": ["utils/*"]
     },
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
