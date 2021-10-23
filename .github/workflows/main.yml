@@ -33,10 +33,10 @@ jobs:
           source: "., !node_modules"
           target: "~/app/rentalx"
       
-      - name: Update/Api
+      - name: Update API  
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
