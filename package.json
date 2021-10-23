@@ -48,6 +48,8 @@
   },
   "dependencies": {
     "@babel/parser": "^7.15.8",
+    "@sentry/node": "^6.13.3",
+    "@sentry/tracing": "^6.13.3",
     "aws-sdk": "^2.1009.0",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.4.0",
